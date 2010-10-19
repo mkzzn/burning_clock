@@ -2,7 +2,22 @@
 %html
   %head
     %title Burning Clock
-    %link{:rel => "stylesheet", :type => "text/css", :href => "/stylesheets/main.css"}
+    %link{:rel => "stylesheet", :type => "text/css", :href => "/main.css"}
   %body
-    %p.intro the man burns in
-    %p.days= "#{@days} DAYS"
+    - if @days > 1
+      %p.beginning The man burns in
+      %p.middle= "#{@days} DAYS"
+    - if @days == 1
+      %p.beginning The man burns
+      %p.middle TOMORROW!
+      %p.end Do something (else) amazing before it's over!
+    - if @days == 0
+      %p.beginning The man burns
+      %p.middle TODAY, MAN!
+      %p.end THE BURN'S ALMOST OVER!?!@?#?!@#"
+    - if @days == -1
+      %p.beginning The man burned
+      %p.middle Yesterday
+      %p.end For the love of god, hang around for the temple burn
+    - if @days < -1
+      %p.beginning The burn is over.  Safe journey home.
