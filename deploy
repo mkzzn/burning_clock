@@ -14,5 +14,11 @@ ssh $remote_host "echo 2>&1" || ssh-add ~/.ssh/mkzzn_dsa
 # Clone the Git repository to a temporary path
 git clone mkzzn_github:mkzzn/$app_name.git $tmp_path
 
+if [[ ./config/deploy_exclude ]]; then
+  exclude="--exclude-from config/deploy_exclude "
+else
+  exclude=""
+fi
+
 # Sync the temporary repository clone with the remote repository
-rsync -avz -e ssh --exclude-from .rsync_exclude $tmp_path $remote_host:$remote_path
+rsync -avz -e ssh $exclude $tmp_path $remote_host:$remote_path
