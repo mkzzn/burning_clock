@@ -14,8 +14,16 @@ class BurningClock < Sinatra::Application
     sass :main
   end
 
-  protected
+  private
   def days_until_the_burn
-    (Time.gm(2011,9,5) - Time.now).to_i/60/60/24
+    seconds_until_the_burn/60/60/24
+  end
+
+  def seconds_until_the_burn
+    (burn_day - Time.now).to_i
+  end
+
+  def burn_day
+    Time.gm(2011,9,3)
   end
 end
