@@ -1,14 +1,7 @@
 !!!
 %html
   %head
-    %title
-      Burning Clock
-      - if @days > 1
-        =" - #{@days} Days"
-      - if @days > 0
-        =" - #{@days} Day"
-      - if @days == 0
-        =" - Happy Burnday"
+    %title="Burning Clock: #{@days}"
     %link{:rel => "stylesheet", :type => "text/css", :href => "/main.css"}
     %script{:src => "/javascripts/analytics.js", :type => "text/javascript", :charset => "utf-8"}
     
