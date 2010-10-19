@@ -14,5 +14,14 @@ ssh $remote_host "echo 2>&1" || ssh-add ~/.ssh/mkzzn_dsa
 # Clone the Git repository to a temporary path
 git clone mkzzn_github:mkzzn/$app_name.git $tmp_path
 
+EXCLUDE_ARRAY=(.git)
+EXCLUDES=""
+
+for I in ${EXCLUDE_ARRAY[@]}; do
+  if test -d $tmp_path/$I; then
+    EXCLUDES="${EXCLUDES}--exclude '${tmp_path}/${I}' "
+  fi
+done
+
 # Sync the temporary repository clone with the remote repository
-rsync -avz -e ssh $tmp_path $remote_host:$remote_path
+rsync -avz -e ssh $EXCLUDES $tmp_path $remote_host:$remote_path
