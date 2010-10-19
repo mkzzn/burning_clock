@@ -2,6 +2,8 @@
 %html
   %head
     %title Burning Clock
+    %link{:rel => "stylesheet", :type => "text/css", :href => "/stylesheets/main.css"}
   %body
-    %p.intro The Man burns in
-    %p.days= "#{@days} days"
+    %div.container
+      %p.intro The Man burns in
+      %p.days= "#{@days} days"

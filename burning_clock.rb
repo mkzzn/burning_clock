@@ -2,12 +2,10 @@ require 'rubygems'
 require 'sinatra'
 require 'haml'
 
-get '/' do
-  haml :index
-end
+class BurningClock < Sinatra::Application
+  set :server, %w[ unicorn thin mongrel ]
 
-get '/main.css' do
-  sass :main
+  get '/' do
+    haml :index
+  end
 end
-
-protected
