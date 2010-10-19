@@ -11,7 +11,7 @@
   %body
     - if @days > 1
       %p.beginning The man burns in
-      %p.middle= "#{@days} DAYS"
+      %p.middle= "#{@days} DAYS."
     - if @days == 1
       %p.beginning The man burns
       %p.middle TOMORROW!
@@ -22,7 +22,7 @@
       %p.end THE BURN'S ALMOST OVER!?!@?#?!@#"
     - if @days == -1
       %p.beginning The man burned
-      %p.middle Yesterday
-      %p.end For the love of god, hang around for the temple burn
+      %p.middle Yesterday.
+      %p.end For the love of god, hang around for the temple burn!
     - if @days < -1
       %p.beginning The burn is over.  Safe journey home.
