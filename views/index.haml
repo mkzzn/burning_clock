@@ -11,7 +11,8 @@
   %body
     - if @days > 1
       %p.beginning The man burns in
-      %p.middle= "#{@days} DAYS."
+      %p.middle= @days
+      %p.end DAYS.
     - if @days == 1
       %p.beginning The man burns
       %p.middle TOMORROW!
