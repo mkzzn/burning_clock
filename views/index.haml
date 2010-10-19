@@ -1,9 +1,20 @@
 !!!
 %html
   %head
-    %title Burning Clock
+    %title
+      Burning Clock
+      - if @days > 1
+        =" - #{@days} Days"
+      - if @days > 0
+        =" - #{@days} Day"
+      - if @days == 0
+        =" - Happy Burnday"
     %link{:rel => "stylesheet", :type => "text/css", :href => "/main.css"}
     %script{:src => "/javascripts/analytics.js", :type => "text/javascript", :charset => "utf-8"}
+    
+    %meta{"http-equiv" => "Content-type", :content => "text/html; charset=utf-8"}
+    %meta{"http-equiv" => "Content-language", :content => "en"}
+    %meta{:name => "description", :content => "A simple countdown of days until the man burns."}
   %body
     - if @days > 1
       %p.beginning The man burns in
