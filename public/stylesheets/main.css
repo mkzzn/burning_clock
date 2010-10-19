@@ -1,7 +1,17 @@
 body {
   font-size: 62.5%;
-  padding: 20px;
+  padding: 60px 0 0 0;
   background: black;
   color: white;
   font-family: Arial, Verdana, Sans, Sans-Serif;
+  text-align: center;
 }
+
+  p.intro {
+    font-size: 3.2em;
+  }
+
+  p.days {
+    margin-top: 20px;
+    font-size: 10em;
+  }
