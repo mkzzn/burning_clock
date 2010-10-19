@@ -5,7 +5,7 @@ class BurningClock < Sinatra::Application
   set :server, %w[ unicorn thin mongrel ]
 
   get '/' do
-    @days = -1
+    @days = days_until_the_burn
     haml :index
   end
 
