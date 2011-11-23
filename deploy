@@ -2,7 +2,7 @@
 app_name=burning_clock
 tmp_path=/tmp/$app_name
 remote_path=/var/www/burning_clock
-remote_host=doblock
+remote_host=doblock2
 
 # Add the necessary ssh key to the ssh-agent if it hasn't been added in this session
 # ssh $remote_host "echo 2>&1" || ssh-add ~/.ssh/`echo $app_name`_dsa
