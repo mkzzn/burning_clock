@@ -1,6 +1,8 @@
 require 'sinatra'
 require 'haml'
 
+require File.dirname(__FILE__) + "/burning_clock.rb"
+
 class BurningClock < Sinatra::Application
   set :server, %w[ unicorn thin mongrel ]
 
