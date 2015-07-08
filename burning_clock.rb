@@ -24,6 +24,6 @@ class BurningClock < Sinatra::Application
   end
 
   def burn_day
-    Time.gm(2013,8,31)
+    Time.gm(2015,9,5)
   end
 end
