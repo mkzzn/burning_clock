@@ -1,5 +1,6 @@
 require 'sinatra'
 require 'haml'
+require 'time'
 
 class BurningClock < Sinatra::Application
   set :server, %w[ unicorn thin mongrel ]
@@ -24,6 +25,6 @@ class BurningClock < Sinatra::Application
   end
 
   def burn_day
-    Time.gm(2015,9,5)
+    Time.parse("9/5/2015 21:00 PST")
   end
 end
